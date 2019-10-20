@@ -12,7 +12,6 @@
       #mapid { height: 400px; }
     </style>
     <script type="text/javascript" src="script.js"></script>
-    
   </head>
   <body>
     <header id="header">Toulouses AI</header>
@@ -46,9 +45,15 @@
           fillColor: '#ffffff'
         };
 
+        var icons = []
         // On place les entreprises sur la map avec des cercles
         for (var i = 0; i < data.length; i++){
-          L.circle([data[i]["lat"], data[i]["lon"]], 30, cStyle).addTo(mymap);
+          //L.circle([data[i]["lat"], data[i]["lon"]], 30, cStyle).addTo(mymap);
+          icons.push(L.icon({
+            iconUrl: './images/' + data[i]["Logos"],
+            iconSize: [40, 40]
+          }));
+          L.marker([data[i]["lat"], data[i]["lon"]], {icon: icons[i]}).addTo(mymap);
         }
     });
     </script>
