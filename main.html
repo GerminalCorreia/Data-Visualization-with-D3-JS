@@ -46,15 +46,24 @@
           fillColor: '#ffffff'
         };
 
-        var icons = []
+        var icons = [] // Contient la liste des objets icons
+
         // On place les entreprises sur la map avec des cercles
         for (var i = 0; i < data.length; i++){
-          //L.circle([data[i]["lat"], data[i]["lon"]], 30, cStyle).addTo(mymap);
-          icons.push(L.icon({
-            iconUrl: './images/' + data[i]["Logos"],
-            iconSize: [40, 40]
-          }));
-          L.marker([data[i]["lat"], data[i]["lon"]], {icon: icons[i]}).addTo(mymap);
+          console.log(data[i])
+          icons.push(
+            L.icon({
+              iconUrl: './images/' + data[i]["Logos"],
+              iconSize: [40, 40]
+            })
+          );
+          L.marker([data[i]["lat"], data[i]["lon"]], {icon: icons[i]})
+          .bindPopup(
+            '<p><b>' + data[i]["NOM"] +
+            '</b><br />' + data[i]["CATEGORIE"] +
+            '<a href="' + data[i]["Lien site web"] + '">Site web</a>' +
+            '<br />' + data[i]["descriptif"] +'</p>')
+          .addTo(mymap);
         }
     });
     </script>

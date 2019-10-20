@@ -1,7 +1,6 @@
 
 
-      //On déssine des cercles pour chaque domaine d'actvité avec une taille proportionnelle à la proportion d'entreprise qui exerce ce domaine
-     
+//On dessine des cercles pour chaque domaine d'actvité avec une taille proportionnelle à la proportion d'entreprise qui exerce ce domaine
 
 domaines = ["MACHINE LEARNING",
 "DEEP LEARNING",
@@ -11,7 +10,6 @@ domaines = ["MACHINE LEARNING",
 "SYSTEME DE RECOMMANDATION",
 "ROBOTIQUE"]
 
-
 function getLength(data, nomDomaine) {
   var nombre = 0;
   for(var i = 0; i < data.length; i++) {
@@ -19,13 +17,5 @@ function getLength(data, nomDomaine) {
       nombre += 1;
     }
   }
-  console.log(nombre);
   return nombre;
 }
-
-
-
-
-
-  
-  
