@@ -28,11 +28,11 @@
      d3.csv("toulouse.csv", function(data) {
         for (var i=0; i<domaines.length; i++){
           var win = d3.select("body").append("svg")
-            .attr("width", 450)
-            .attr("height", 450);
+            .attr("width", 400)
+            .attr("height", 100);
           var text = win.append("text")
-            .attr("dx", getLength(data,domaines[i]) * 3 - 60)
-            .attr("dy", getLength(data,domaines[i]) * 3)
+            .attr("dx", getLength(data,domaines[i]) * 2)
+            .attr("dy", getLength(data,domaines[i]) + 20)
             .text(domaines[i]);
           var cercle = win.append("circle")
             .attr("cx", getLength(data,domaines[i]))
@@ -41,7 +41,7 @@
             .style("fill","hsl(" + Math.random() * 360 + ",100%,50%)");
           }
 
-        var cStyle = { 
+        var cStyle = {
           color: 'red',
           fillColor: '#ffffff'
         };
