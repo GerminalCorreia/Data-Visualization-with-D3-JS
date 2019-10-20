@@ -60,8 +60,8 @@
           L.marker([data[i]["lat"], data[i]["lon"]], {icon: icons[i]})
           .bindPopup(
             '<p><b>' + data[i]["NOM"] +
-            '</b><br />' + data[i]["CATEGORIE"] +
-            '<a href="' + data[i]["Lien site web"] + '">Site web</a>' +
+            '</b><br /><i>' + data[i]["CATEGORIE"] +
+            '</i>&nbsp;<a href="' + data[i]["Lien site web"] + '">Site web</a>' +
             '<br />' + data[i]["descriptif"] +'</p>')
           .addTo(mymap);
         }
