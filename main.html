@@ -26,17 +26,18 @@
         }).addTo(mymap);
      d3.csv("toulouse.csv", function(data) {
         for (var i=0; i<domaines.length; i++){
+          var length = getLength(data,domaines[i]);
           var win = d3.select("body").append("svg")
             .attr("width", 400)
             .attr("height", 100);
           var text = win.append("text")
-            .attr("dx", getLength(data,domaines[i]) * 2)
-            .attr("dy", getLength(data,domaines[i]) + 20)
-            .text(domaines[i]);
+            .attr("dx", length * 2)
+            .attr("dy", length + 20)
+            .text(domaines[i] + " (" + length + ")");
           var cercle = win.append("circle")
-            .attr("cx", getLength(data,domaines[i]))
-            .attr("cy", getLength(data,domaines[i]))
-            .attr("r", getLength(data,domaines[i]))
+            .attr("cx", length)
+            .attr("cy", length)
+            .attr("r", length)
             .style("fill","hsl(" + Math.random() * 360 + ",100%,50%)");
           }
 
